@@ -1,0 +1,14 @@
+.coinInfo {
+    width: 90%;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    padding: 1.5rem 2rem;
+    gap: 1rem;
+    background-color: var(--darkgrey);
+    border-radius: 0.8rem;
+}
+
+.coin-info-description {
+   cursor: pointer;
+}

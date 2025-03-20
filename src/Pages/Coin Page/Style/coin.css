@@ -1,0 +1,14 @@
+.coin-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.coin-data {
+    width: 90%;
+    display: block;
+    background-color: var(--darkgrey);
+    border-radius: 0.8rem;
+}

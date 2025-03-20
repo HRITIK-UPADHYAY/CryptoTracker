@@ -1,3 +1,10 @@
+.link-wrapper-list {
+    display: block; /* Ensures it behaves like a div */
+    text-decoration: none; /* Removes the underline */
+    color: inherit; /* Ensures text color remains unchanged */
+    width: 100%;/* Ensures it takes full width */
+}
+
 .list {
     width: 100%;
     display: flex;
@@ -16,7 +23,7 @@
 }
 
 
-.coin-info { 
+.list .coin-info { 
     display: flex;
     justify-content: flex-start; 
     flex-direction: row;
@@ -24,7 +31,7 @@
 }
 
 
-.coin-info  img {
+.list .coin-info  img {
     width: 3rem;
     height: 3rem;
 }

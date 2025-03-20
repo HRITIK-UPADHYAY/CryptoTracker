@@ -1,5 +1,12 @@
+.link-wrapper-grid {
+    display: block; /* Ensures it behaves like a div */
+    text-decoration: none; /* Removes the underline */
+    color: inherit; /* Ensures text color remains unchanged */
+    width: 22%;/* Ensures it takes full width */
+}
+
 .grid {
-    width: 22%;
+    width: 100%;
     display: flex;
     justify-content: flex-start;
     flex-direction: column;
