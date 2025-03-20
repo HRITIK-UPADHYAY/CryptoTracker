@@ -1,0 +1,77 @@
+.tabComponent {
+    display: flex;
+    flex-direction: column;
+    padding: 1.5rem 3rem;
+}
+
+.tabs {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.tabs p {
+    width: 50%;
+    font-size: 1.2rem;
+    font-weight: 600;
+    text-align: center;
+}
+
+.error {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: red;
+    margin: 10rem;
+}
+
+#grid-view {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 2rem;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.tabs .active {
+    padding-bottom: 0.2rem;
+    border-bottom: 1px solid var(--blue);
+}
+
+
+#list-view {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+    padding: 2rem;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+
+.not-found {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.not-found h3 {
+    font-size: 2rem;
+    color: var(--grey);
+}
+
+.not-found button {
+    background-color: var(--blue);
+    color: var(--white);
+    padding: 0.5rem 1rem;
+    border-radius: 1rem;
+}

@@ -2,21 +2,29 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    
 }
   
 .navbar {
     width: 100%;
-    position: fixed;
+    position: sticky;
+    background-color: var(--black);
     top: 0;
     left: 0;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 1.5rem 3rem;
+    z-index: 10000;
 }
   
 .logo {
     font-size: 1.2rem;
+}
+
+a {
+    text-decoration: none;
+    color: var(--white);
 }
   
 .links {
@@ -38,15 +46,6 @@
 .links:hover a:hover {
     color: var(--white);
     transition:  all 0.3s;
-}
-  
-.dashboard {
-    border: none;
-    background-color: var(--blue);
-    font-size: 1rem;
-    color: var(--white);
-    border-radius: 2rem;
-    padding: 0.8rem 2rem;
 }
 
 .mobile-drawer { 

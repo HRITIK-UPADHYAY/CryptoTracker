@@ -1,11 +1,17 @@
+import { Route, Routes } from 'react-router-dom'
 import './App.css'
-import Header from './Components/Common/Header'
+import Home from './Pages/Home'
+import DashBoard from './Pages/DashBoard'
 
 function App() {
   return (
-    <>
-      <Header />
-    </>
+    <div className='app'>
+      <Routes>
+        <Route path='/' element={<Home />} />
+        <Route path='/dashboard' element={<DashBoard />} />
+      </Routes>
+      
+    </div>
   )
 }
 

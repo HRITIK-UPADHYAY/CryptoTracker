@@ -1,0 +1,168 @@
+.grid {
+    width: 22%;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    padding: 2rem;
+    border-radius: 1rem;
+    gap: 1.5rem;
+    background-color: var(--darkgrey);
+    border: 1px solid var(--darkgrey);
+}
+
+.grid-price-positive:hover {
+    border-color: var(--green);
+}
+
+.grid-price-negative:hover {
+    border-color: var(--red);
+}
+
+.upper {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.upper .left {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: row;
+    gap: 1rem;
+}
+
+.upper .left img {
+    width: 3rem;
+    height: 3rem;
+}
+
+.upper .left h4 {
+    text-transform: uppercase;
+    color: var(--white);
+    font-size: 1.2rem;
+}
+
+.upper .left p {
+    color: var(--grey);
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    font-weight: smaller;
+    margin: 0.2rem;
+}
+
+.upper .right {
+    width: 40%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.upper .right .star-logo-red {
+    font-size: 3.2rem;
+    border: 1px solid var(--red);
+    color: var(--red);
+    border-radius: 50%;
+    padding: 0.2rem;
+}
+
+.upper .right .star-logo-green {
+    font-size: 3.2rem;
+    border: 1px solid var(--green);
+    color: var(--green);
+    border-radius: 50%;
+    padding: 0.2rem;
+}
+
+
+.middle {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 1rem;
+}
+
+.middle p {
+    padding: 0.5rem 1rem;
+    border-radius: 2rem;
+    text-align: center;
+    font-size: 1rem;
+}
+
+.middle .price-positive {
+    border: 1px solid var(--green);
+    color: var(--green);
+}
+
+.middle .price-positive:hover {
+    background-color: var(--green);
+    color: var(--white);
+    transition: all 0.3s;
+}
+
+.middle .price-negative {
+    border: 1px solid var(--red);
+    color: var(--red);
+}
+
+.middle .price-negative:hover {
+    background-color: var(--red);
+    color: var(--white);
+    transition: all 0.3s;
+}
+
+.middle .trend-icon {
+    border: 1px solid var(--green);
+    border-radius: 50%;
+    font-size: 2.4rem;
+    padding: 0.2rem;
+}
+
+.middle .up {
+    border: 1px solid var(--green);
+    color: var(--green);
+    transition: all 0.3s;
+}
+
+.middle .up:hover {
+    background-color: var(--green);
+    color: var(--white);
+    transition: all 0.3s;
+}
+
+.middle .down {
+    border: 1px solid var(--red);
+    color: var(--red);
+}
+
+.middle .down:hover {
+    background-color: var(--red);
+    color: var(--white);
+}
+
+.lower {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.lower > p {
+    font-size: 1.5rem;
+}
+
+.lower .coin-price-green {
+    color: var(--green);
+}
+
+.lower .coin-price-red {
+    color: var(--red);
+}
+
+.lower .market-cap {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    color: var(--grey);
+    font-weight: 300
+}

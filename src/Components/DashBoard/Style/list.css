@@ -1,0 +1,157 @@
+.list {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem;
+    border-radius: 1.5rem;
+}
+
+.list:hover {
+    background-color: var(--darkgrey);
+}
+
+.list > * {
+    width: 16%;
+}
+
+
+.coin-info { 
+    display: flex;
+    justify-content: flex-start; 
+    flex-direction: row;
+    gap: 1rem;
+}
+
+
+.coin-info  img {
+    width: 3rem;
+    height: 3rem;
+}
+
+.coin-name h4 {
+    text-transform: uppercase;
+    color: var(--white);
+    font-size: 1.2rem;
+}
+
+.coin-name  p {
+    color: var(--grey);
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    font-weight: smaller;
+    justify-content: flex-start;
+}
+
+.coin-price-change {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.coin-price-change .price {
+    padding: 0.7rem 1.5rem;
+    border-radius: 2rem;
+    text-align: center;
+    font-size: 1.2rem;
+}
+
+.coin-price-change .price-positive {
+    border: 1px solid var(--green);
+    color: var(--green);
+}
+
+.coin-price-change .price-positive:hover {
+    background-color: var(--green);
+    color: var(--white);
+    transition: all 0.3s;
+}
+
+.coin-price-change .price-negative {
+    border: 1px solid var(--red);
+    color: var(--red);
+}
+
+.coin-price-change .price-negative:hover {
+    background-color: var(--red);
+    color: var(--white);
+    transition: all 0.3s;
+}
+
+.coin-price {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: row;
+    gap: 2rem;
+}
+
+.coin-price .trend-icon {
+    border: 1px solid var(--green);
+    border-radius: 50%;
+    font-size: 2.4rem;
+    padding: 0.2rem;
+}
+
+.coin-price .up {
+    border: 1px solid var(--green);
+    color: var(--green);
+    transition: all 0.3s;
+}
+
+.coin-price .up:hover {
+    background-color: var(--green);
+    color: var(--white);
+    transition: all 0.3s;
+}
+
+.coin-price .down {
+    border: 1px solid var(--red);
+    color: var(--red);
+}
+
+.coin-price .down:hover {
+    background-color: var(--red);
+    color: var(--white);
+}
+
+.coin-price > p {
+    font-size: 1.5rem;
+}
+
+.coin-price .coin-price-green {
+    color: var(--green);
+}
+
+.coin-price .coin-price-red {
+    color: var(--red);
+}
+
+.volume, .marketCap {
+    font-size: 1.5rem;
+    color: var(--white);
+    text-align: center;
+}
+
+.star-logo {
+    margin: auto;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.star-logo .star-logo-red {
+    font-size: 3.2rem;
+    border: 1px solid var(--red);
+    color: var(--red);
+    border-radius: 50%;
+    padding: 0.2rem;
+}
+
+.star-logo .star-logo-green {
+    font-size: 3.2rem;
+    border: 1px solid var(--green);
+    color: var(--green);
+    border-radius: 50%;
+    padding: 0.2rem;
+}
