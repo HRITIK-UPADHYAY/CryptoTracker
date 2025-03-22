@@ -12,3 +12,9 @@
     background-color: var(--darkgrey);
     border-radius: 0.8rem;
 }
+
+.chart-component {
+    width: 90%;
+    background-color: var(--darkgrey);
+    border-radius: 0.8rem;
+}
