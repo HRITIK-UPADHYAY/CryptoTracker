@@ -6,6 +6,5 @@ export const getCoinData = (id) => {
     .catch(err => {
         console.log(err);
     });
-
     return data;
 }

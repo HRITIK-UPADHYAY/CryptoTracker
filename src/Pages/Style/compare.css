@@ -1,0 +1,44 @@
+.compare {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.compare-container {
+    width: 95%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.select-menu {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex-direction: row;
+}
+
+.coin-container { 
+    width: 100%;
+    background-color: var(--darkgrey);
+    border-radius: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 0.5rem;
+}
+
+.coin-compare-chart {
+    width: 100%;
+    background-color: var(--darkgrey);
+    margin: 0.5rem;
+}
+
+.coin-info-desc {
+    width: 100%;
+}

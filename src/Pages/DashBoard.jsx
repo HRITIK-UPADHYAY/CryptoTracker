@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react'
 import Header from '../Components/Common/Header'
-import axios from 'axios'
 import TabComponent from '../Components/DashBoard/TabComponent'
 import PaginationComponent from '../Components/DashBoard/Pagination'
 import Search from '../Components/DashBoard/Search';
 import Loader from '../Components/DashBoard/Loader'
 import BackToTop from '../Components/Common/BackToTop'
+import { get100Coins } from '../Functions/get100Coins';
 
 const DashBoard = () => {
     const [coins, setCoins] = useState([]);
@@ -28,14 +28,22 @@ const DashBoard = () => {
     };
 
     useEffect(() => {
-        axios.get('https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&sparkline=false')
-        .then(res => {
-          setCoins(res.data);
-          setPagenatedCoins(res.data.slice(0, 10));
-          setIsLoading(false);
-        })
-        .catch(err => setErr(err.message));
-    });
+        getData();
+    }, []);
+
+    const getData = async () => {
+      const myCoins = await get100Coins();
+      if(Array.isArray(myCoins)) {
+        setCoins(myCoins);
+        setPagenatedCoins(myCoins.slice(0, 10));
+        setIsLoading(false);
+      }
+      else {
+        setErr(myCoins);
+        setErrInfo(true);
+        setIsLoading(false);
+      }
+    }
 
   return (
     <div>

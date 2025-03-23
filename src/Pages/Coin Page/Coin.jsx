@@ -9,9 +9,9 @@ import './Style/coin.css'
 import { getCoinData } from '../../Functions/getCoinData';
 import { getCoinPrices } from '../../Functions/getCoinPrices';
 import ChartComponent from './ChartComponent';
-import { convertDate } from '../../Functions/convertDate';
 import SelectDays from './SelectDays';
 import { settingChartData } from '../../Functions/setingtChartData';
+import PriceToggle from './PriceToggle';
 
 
 const Coin = () => {
@@ -20,10 +20,10 @@ const Coin = () => {
     const [chartData, setChartData] = useState({});
     const {id} = useParams(); 
     const [days, setDays] = useState(30);
+    const [priceType, setPriceType] = useState('left');
 
     useEffect(() => {
         if(id) {
-          console.log("id is there => ", id);
           getData();
         }
     }, [id]);
@@ -32,23 +32,9 @@ const Coin = () => {
       const data = await getCoinData(id);
       if(data) {
         coinobject(setCoinData, data);
-        const prices = await getCoinPrices(id, days);
+        const prices = await getCoinPrices(id, days, priceType);
         if(prices) {
-          setChartData({
-            labels: prices.map(price => convertDate(price[0])),
-            datasets: [
-              {
-                data: prices.map(price => price[1]),
-                borderColor: "#3a80e9",
-                borderWidth: 2,
-                fill: true,
-                tension: 0.25,
-                backgroundColor: "rgba(58, 128, 233, 0.1)",
-                pointRadius: 0,
-              },
-            ]
-          });
-
+          settingChartData(setChartData, prices);
           setIsLoading(false);
         }
       }
@@ -57,13 +43,22 @@ const Coin = () => {
     const handleDaysChange = async (event) => {
       setIsLoading(true);
       setDays(event.target.value);
-      const prices = await getCoinPrices(id, event.target.value);
+      const prices = await getCoinPrices(id, event.target.value, priceType);
+      if(prices) {
+        settingChartData(setChartData, prices);
+        setIsLoading(false);
+      }
+    };
+
+    const handlePriceTypeChange = async (event, newType) => {
+      setIsLoading(true);
+      setPriceType(newType);
+      const prices = await getCoinPrices(id, days, newType);
       if(prices) {
         settingChartData(setChartData, prices)
         setIsLoading(false);
       }
     };
-
 
   return (
     <div>
@@ -77,7 +72,8 @@ const Coin = () => {
           </div>
           <div className="chart-component">
             <SelectDays days={days} handleDaysChange={handleDaysChange}/>
-            <ChartComponent chartData={chartData} />
+            <PriceToggle priceType={priceType} handlePriceTypeChange={handlePriceTypeChange}/>
+            <ChartComponent chartData={chartData} priceType={priceType} />
           </div>
           <CoinInfo  heading={coinData.name} description={coinData.desc} />
         </div> 

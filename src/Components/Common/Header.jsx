@@ -13,7 +13,7 @@ const Header = () => {
       <div className='links'>
         <p> TGL </p>
         <Link to="/"> Home </Link>
-        <Link> Compare </Link>
+        <Link to="/compare"> Compare </Link>
         <Link> Watchlist </Link>
         <Link to="/dashboard"> <Button text={"Dashboard"} /> </Link>
       </div>

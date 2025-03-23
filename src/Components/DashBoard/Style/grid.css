@@ -29,10 +29,11 @@
     width: 100%;
     display: flex;
     justify-content: space-between;
-    gap: 1rem;
+    align-items: center;
 }
 
 .upper .left {
+    flex: 1 1 30%;
     display: flex;
     justify-content: flex-start;
     align-items: center;
@@ -62,7 +63,6 @@
 .upper .right {
     width: 40%;
     display: flex;
-    justify-content: flex-end;
 }
 
 .upper .right .star-logo-red {
