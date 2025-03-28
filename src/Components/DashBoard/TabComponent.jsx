@@ -5,9 +5,10 @@ import List from './List';
 
 const TabComponent = ({coins, searchText, setSearchText}) => {
   const [active, setActive] = useState(true);
-     
+  const [watchListSet, setWatchListSet] = useState(() => new Set(JSON.parse(localStorage.getItem('watchListCoins')) || []));
+
   useEffect(() => {
-    handleGridClick("grid-view");
+    handleGridClick("grid-view");    
   }, []);
 
 
@@ -44,11 +45,11 @@ const TabComponent = ({coins, searchText, setSearchText}) => {
       }
 
       <div id="grid-view">
-        {coins.map((coin, i) => <Grid key={i} coin={coin}/>)}
+        {coins.map((coin, i) => <Grid key={i} coin={coin} isPresent={watchListSet.has(coin.id)} /> )}
       </div>
 
       <div id="list-view">
-      {coins.map((coin, i) => <List key={i} coin={coin}/>)}
+        {coins.map((coin, i) => <List key={i} coin={coin} isPresent={watchListSet.has(coin.id)} />)}
       </div>
     </div>
   )

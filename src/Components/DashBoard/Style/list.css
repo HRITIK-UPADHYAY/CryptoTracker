@@ -163,3 +163,121 @@
     border-radius: 50%;
     padding: 0.2rem;
 }
+
+.star-logo .star-logo-green:hover {
+    background-color: var(--green);
+    color: var(--white);
+}
+
+.star-logo .star-logo-red:hover {
+    background-color: var(--red);
+    color: var(--white);
+}
+
+
+@media screen and (max-width: 1000px) {
+    .list {
+        padding: 1rem;
+    }
+    
+    
+    .list .coin-info { 
+        gap: 0.5rem;
+    }
+    
+    .list .coin-info  img {
+        width: 2rem;
+        height: 2rem;
+    }
+    
+    .coin-name h4 {
+        font-size: 0.8rem;
+    }
+    
+    .coin-name  p {
+        font-size: 0.5rem;
+    }
+    
+    .coin-price-change .price {
+        padding: 0.3rem 0.5rem;
+        font-size: 0.7rem;
+    }
+    
+    .coin-price {
+        gap: 0.7rem;
+    }
+    
+    .coin-price .trend-icon {
+        font-size: 1.5rem;
+    }
+    
+    .coin-price > p {
+        font-size: 0.8rem;
+    }
+    
+    .volume, .marketCap {
+        font-size: 0.7rem;
+    }
+    
+    .star-logo .star-logo-red {
+        font-size: 1.8rem;
+    }
+    
+    .star-logo .star-logo-green {
+        font-size: 1.8rem;
+    }
+}
+
+
+@media screen and (min-width: 1001px) and (max-width: 1200px) {
+    .list {
+        padding: 1.4rem;
+    }
+    
+    .list .coin-info { 
+        gap: 0.7rem;
+    }
+    
+    .list .coin-info  img {
+        width: 2.5rem;
+        height: 2.5rem;
+    }
+    
+    .coin-name h4 {
+        font-size: 1rem;
+    }
+    
+    .coin-name  p {
+        font-size: 0.7rem;
+    }
+    
+    .coin-price-change .price {
+        padding: 0.5rem 0.7rem;
+        font-size: 0.9rem;
+    }
+    
+    .coin-price {
+        gap: 0.9rem;
+    }
+    
+    .coin-price .trend-icon {
+        font-size: 2.2rem;
+    }
+    
+    .coin-price > p {
+        font-size: 1.2rem;
+    }
+    
+    .volume, .marketCap {
+        font-size: 1rem;
+    }
+    
+    .star-logo .star-logo-red {
+        font-size: 2.3rem;
+    }
+    
+    .star-logo .star-logo-green {
+        font-size: 2.3rem;
+    }
+
+}

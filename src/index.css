@@ -4,8 +4,8 @@
     --white: #f3f3f3;
     --black: #111;
     --blue: #3a80e9;
-    --grey: #888;
-    --darkgrey: #1b1b1b;
+    --grey: #5a5757;
+    --darkgrey: #c7c2c21f;
     --green: #61c96f;
     --red: #f94141;
 }
@@ -44,16 +44,7 @@ body {
   
 img {
     -webkit-user-drag: none;  /* Prevent dragging in WebKit browsers (Chrome, Safari) */
-    user-drag: none;          /* Standard property */
+    --user-drag: none;          /* Standard property */
     pointer-events: none;     /* Prevents pointer interaction if needed */
 }
 
-.error {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    margin: 5rem;
-    gap: 1rem;
-    color: var(--red);
-}

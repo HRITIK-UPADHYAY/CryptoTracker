@@ -3,13 +3,16 @@
 }
 
 .footer {
-    position: ;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
     display: flex;
     justify-content: space-between;
     align-items: center;
     background-color: var(--blue);
     border-radius: 0.5rem;
     padding: 1.5rem 2rem;
+    z-index: 10000;
 }
 
 .social-media {
@@ -17,4 +20,5 @@
     justify-content: space-around;
     align-items: center;
     gap: 1rem;
+    font-size: 1rem;
 }

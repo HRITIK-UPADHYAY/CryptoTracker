@@ -1,5 +1,5 @@
 .coinInfo {
-    width: 90%;
+    width: 100%;
     display: flex;
     justify-content: flex-start;
     flex-direction: column;
@@ -11,4 +11,15 @@
 
 .coin-info-description {
    cursor: pointer;
+}
+
+
+@media screen and (max-width: 800px) {
+    h2 {
+        font-size: 1rem;
+    }
+
+    p {
+        font-size: 0.8rem;
+    }
 }

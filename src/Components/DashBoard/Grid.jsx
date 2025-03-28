@@ -1,11 +1,28 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './Style/grid.css';
 import TrendingUpRoundedIcon from '@mui/icons-material/TrendingUpRounded';
 import TrendingDownRoundedIcon from '@mui/icons-material/TrendingDownRounded';
 import StarPurple500RoundedIcon from '@mui/icons-material/StarPurple500Rounded';
 import { Link } from 'react-router-dom';
+import StarRoundedIcon from '@mui/icons-material/StarRounded';
 
-const Grid = ({coin}) => {
+const Grid = ({coin, isPresent}) => {
+  const [isWatchList, setWatchList] = useState(isPresent);
+
+  function handleWatchList(event, id) {
+    event.preventDefault(); 
+    if(!localStorage.getItem('watchListCoins')) localStorage.setItem('watchListCoins', JSON.stringify([]));
+
+    const hs = new Set(JSON.parse(localStorage.getItem('watchListCoins')));
+
+    if(!isWatchList) hs.add(id);
+    else {
+      if(hs.has(id)) hs.delete(id);
+    }
+
+    localStorage.setItem('watchListCoins', JSON.stringify([...hs]));
+    setWatchList(prevState => !prevState);
+  }
     
   return (
     <Link to={`/coin/${coin.id}`} className='link-wrapper-grid'>
@@ -18,8 +35,10 @@ const Grid = ({coin}) => {
               <p> {coin.name} </p>
             </div>
           </div>
-          <div className='right'> 
-            <StarPurple500RoundedIcon className={coin.price_change_percentage_24h > 0 ? 'star-logo-green': 'star-logo-red'}/>
+          <div className='right' onClick={(event) => handleWatchList(event, coin.id)}> 
+            { isWatchList ? <StarRoundedIcon className={coin.price_change_percentage_24h > 0 ? 'star-logo-green': 'star-logo-red'}/> 
+                          : <StarPurple500RoundedIcon className={coin.price_change_percentage_24h > 0 ? 'star-logo-green': 'star-logo-red'}/>   
+            } 
           </div>
         </div>
         <div className='middle'>
@@ -39,3 +58,7 @@ const Grid = ({coin}) => {
 }
 
 export default Grid
+
+// { isWatchList ? <StarRoundedIcon className={coin.price_change_percentage_24h > 0 ? 'star-logo-green': 'star-logo-red'}/> 
+//                           : <StarPurple500RoundedIcon className={coin.price_change_percentage_24h > 0 ? 'star-logo-green': 'star-logo-red'}/>   
+//             } 

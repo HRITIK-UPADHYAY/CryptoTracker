@@ -8,13 +8,13 @@
 .navbar {
     width: 100%;
     position: sticky;
-    background-color: var(--black);
     top: 0;
     left: 0;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 1.5rem 3rem;
+    background-color: var(--black);
     z-index: 10000;
 }
   
@@ -52,10 +52,10 @@ a {
     display: none;
 }
 
-
-@media screen and (max-width: 800px) {
+@media screen and (min-width: 576px) {
     .navbar {
-        padding: 1.5rem;
+        padding: 0.5rem 1rem;
+        z-index: 1;
     }
 
     .logo {
@@ -75,11 +75,21 @@ a {
         transition:  all 0.3s;
     }
 
+    .drawer-link p {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        color: var(--grey);
+        font-size: 0.9rem;
+        font-weight: 600;
+        padding: 0.5rem 1rem;
+    }
+
     .drawer-link a {
         text-decoration: none;
         color: var(--grey);
         font-weight: 600;
-        font-size: 1rem;
+        font-size: 0.9rem;
         padding: 0.5rem 1rem;
     }  
     
@@ -89,6 +99,7 @@ a {
     }
 
     .drawer-link {
+        border: 1px solid red;
         height: 100vh;
         width: 35vw;
         background-color: var(--black);
@@ -98,3 +109,75 @@ a {
         gap: 1rem;
     }
 }
+
+@media screen and (min-width: 768px) {
+    .navbar {
+        padding: 1.5rem;
+        z-index: 1;
+    }
+
+    .logo {
+        font-size: 1rem;
+    }
+
+    .links {
+       display: none;
+    }
+
+    .mobile-drawer {
+        display: block;
+    }
+   
+    .links:hover {
+        color: var(--white);
+        transition:  all 0.3s;
+    }
+
+    .drawer-link p {
+        font-size: 0.9rem;
+    }
+
+    .drawer-link a {
+        font-size: 0.9rem;
+    }  
+    
+    a:hover {
+        color: var(--white);
+        transition:  all 0.3s;
+    }
+
+    .drawer-link {
+        border: 1px solid red;
+        height: 100vh;
+        width: 35vw;
+        background-color: var(--black);
+        padding: 1.5rem;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+} 
+ 
+@media screen and (min-width: 992px) {
+    .logo {
+        font-size: 1rem;
+    }
+
+    .links {
+       display: flex;
+    }
+
+    .mobile-drawer {
+        display: none;
+    }
+   
+    .links:hover {
+        color: var(--white);
+        transition:  all 0.3s;
+    }
+
+    a:hover {
+        color: var(--white);
+        transition:  all 0.3s;
+    }
+} 

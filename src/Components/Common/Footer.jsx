@@ -9,7 +9,7 @@ import './Style/footer.css'
 const Footer = () => {
   return (
     <div className='footer'>
-        <h3> CryptoTracker.</h3>
+        <h2> CryptoTracker.</h2>
         <div className="social-media">
             <FacebookIcon />
             <EmailIcon />

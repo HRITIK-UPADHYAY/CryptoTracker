@@ -6,6 +6,7 @@ import Search from '../Components/DashBoard/Search';
 import Loader from '../Components/DashBoard/Loader'
 import BackToTop from '../Components/Common/BackToTop'
 import { get100Coins } from '../Functions/get100Coins';
+import Error from './Error';
 
 const DashBoard = () => {
     const [coins, setCoins] = useState([]);
@@ -52,14 +53,12 @@ const DashBoard = () => {
       <Search searchText={searchText} setSearchText={setSearchText} />
 
       {
-        errInfo ? <div className='error'> 
-              <h3> There is some {err} While making the API Hit </h3>
-              <p> Please Try After Sometime or Refresh The Page. </p>
-             </div>
-          : isLoading ? <Loader /> : <div>
-                                        <TabComponent coins={searchText ? coins: pagenatedCoins} searchText={searchText} setSearchText={setSearchText} />
-                                        {!searchText && <PaginationComponent page={page} handleChange={handlePageChange}/> }
-                                      </div> 
+        isLoading ?  <Loader /> 
+          : errInfo ? <Error err={err}/> 
+                    : <div className='dashboard'>
+                        <TabComponent coins={searchText ? coins: pagenatedCoins} searchText={searchText} setSearchText={setSearchText} />
+                        {!searchText && <PaginationComponent page={page} handleChange={handlePageChange}/> }
+                      </div> 
       }
 
     </div>

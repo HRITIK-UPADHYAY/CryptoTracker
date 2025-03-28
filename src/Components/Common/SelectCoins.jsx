@@ -2,9 +2,13 @@ import React, { useEffect, useState } from 'react'
 import { get100Coins } from '../../Functions/get100Coins';
 import { MenuItem, Select } from '@mui/material';
 import './Style/selectCoin.css';
+import Loader from '../DashBoard/Loader';
 
 const SelectCoins = ({crypto1, crypto2, handleCoinsChange}) => {
     const [getAllCoins, setGetAllCoins] = useState([]);
+    const [errInfo, setErrInfo] = useState(false);
+    const [err, setErr] = useState("");
+    const [isLoading, setIsLoading] = useState(true);
 
    const style = {
         height: "2.5rem",
@@ -28,7 +32,13 @@ const SelectCoins = ({crypto1, crypto2, handleCoinsChange}) => {
 
    async function getData() {
     const myCoins = await get100Coins();
-    setGetAllCoins(myCoins);
+    if(Array.isArray(myCoins)) setGetAllCoins(myCoins);
+    else {
+        setErr(myCoins);
+        setErrInfo(true);
+    }
+    
+    setIsLoading(false);
    }
 
 
@@ -42,7 +52,9 @@ const SelectCoins = ({crypto1, crypto2, handleCoinsChange}) => {
           onChange={(event) => handleCoinsChange(event, false)}
         >
         { 
-           getAllCoins && getAllCoins.filter(item => item.id != crypto2).map((coin, index) => <MenuItem key={index} value={coin.id}> {coin.name} </MenuItem> )
+            isLoading ? <Loader /> 
+                      : errInfo ? <Error err={err} />
+                                : getAllCoins && getAllCoins.filter(item => item.id != crypto2).map((coin, index) => <MenuItem key={index} value={coin.id}> {coin.name} </MenuItem> )
         }
         </Select>
 
@@ -54,7 +66,9 @@ const SelectCoins = ({crypto1, crypto2, handleCoinsChange}) => {
           onChange={(event) =>  handleCoinsChange(event, true)}
         >
         { 
-            getAllCoins && getAllCoins.filter(item => item.id != crypto1).map((coin, index) => <MenuItem key={index} value={coin.id}> {coin.name} </MenuItem> )
+           isLoading ? <Loader /> 
+                    : errInfo ? <Error err={err} />
+                              : getAllCoins && getAllCoins.filter(item => item.id != crypto1).map((coin, index) => <MenuItem key={index} value={coin.id}> {coin.name} </MenuItem> )
         }
         </Select>
     </div>
