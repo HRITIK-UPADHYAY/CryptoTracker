@@ -7,10 +7,6 @@ import Switch from './MIUI components/Switch'
 
 const Header = () => {
 
-  useEffect(() => {
-    sessionStorage.setItem("themeSwitcher", JSON.stringify(true));
-  }, [])
-
   return (
     <nav className='navbar'>
       <div className='logo'> 

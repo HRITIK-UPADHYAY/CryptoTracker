@@ -18,10 +18,8 @@ const WatchList = () => {
     const [err, setErr] = useState("");
 
     useEffect(() => {
-      console.log("inside the useeffect")
       async function getData() {
         const data = await get100Coins();
-        console.log(data)
         if(Array.isArray(data)) setCoinsArray(data); 
         else {
           setErrInfo(true);
