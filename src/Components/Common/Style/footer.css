@@ -2,7 +2,7 @@
     box-sizing: border-box;
 }
 
-.footer {
+.footer{
     width: 100%;
     position: fixed;
     bottom: 0;
@@ -11,7 +11,7 @@
     align-items: center;
     background-color: var(--blue);
     border-radius: 0.5rem;
-    padding: 1.5rem 2rem;
+    padding: 1rem 1rem;
     z-index: 10000;
 }
 

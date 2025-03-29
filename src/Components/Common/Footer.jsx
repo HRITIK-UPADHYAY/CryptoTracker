@@ -9,13 +9,13 @@ import './Style/footer.css'
 const Footer = () => {
   return (
     <div className='footer'>
-        <h2> CryptoTracker.</h2>
-        <div className="social-media">
-            <FacebookIcon />
-            <EmailIcon />
-            <TwitterIcon />
-            <InstagramIcon />
-        </div>
+      <h2> CryptoTracker.</h2>
+      <div className="social-media">
+        <FacebookIcon />
+        <EmailIcon />
+        <TwitterIcon />
+        <InstagramIcon />
+      </div>
     </div>
   )
 }

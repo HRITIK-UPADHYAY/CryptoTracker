@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import './Style/List.css'
+import './Style/list.css'
 import TrendingUpRoundedIcon from '@mui/icons-material/TrendingUpRounded';
 import TrendingDownRoundedIcon from '@mui/icons-material/TrendingDownRounded';
 import StarPurple500RoundedIcon from '@mui/icons-material/StarPurple500Rounded';
